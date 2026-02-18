@@ -194,6 +194,10 @@ export default function Home() {
             <p className="text-gray-400 max-w-2xl mx-auto">
               A collection of SaaS tools, automation workflows, and developer products I've built.
             </p>
+            <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20">
+              <Sparkles className="w-4 h-4 text-indigo-400" />
+              <span className="text-sm text-indigo-300">All projects generated with the help of a custom AI assistant — except PiggyBang (that one's handcrafted 💪)</span>
+            </div>
           </motion.div>
 
           <motion.div 
@@ -330,6 +334,9 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-sm text-gray-500">
               © 2026 Rama Gusti Anuga. All rights reserved.
+            </div>
+            <div className="text-xs text-gray-600 text-center">
+              🖥️ This portfolio and all projects are hosted on a Contabo VPS — the same server where <span className="text-indigo-400">Clawd</span> (the AI assistant who helped build them) lives.
             </div>
             <div className="flex items-center gap-6">
               <a href="https://github.com/ramagusti" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
