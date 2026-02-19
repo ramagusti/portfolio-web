@@ -389,9 +389,6 @@ export default function Home() {
             <div className="text-sm text-gray-500">
               © 2026 Rama Gusti Anuga. All rights reserved.
             </div>
-            <div className="text-xs text-gray-600 text-center">
-              🖥️ This portfolio and all projects are hosted on a Contabo VPS — the same server where <span className="text-indigo-400">Clawd</span> (the AI assistant who helped build them) lives.
-            </div>
             <div className="flex items-center gap-6">
               <a href="https://github.com/ramagusti" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Github className="w-5 h-5" />
