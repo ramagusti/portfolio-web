@@ -50,3 +50,47 @@ body {
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
 }
+
+.hero-background {
+  background-image: linear-gradient(180deg, rgba(10, 10, 10, 0.85), rgba(15, 23, 42, 0.45)), url('/hero-parallax-dev.jpg');
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+}
+
+.hero-dot {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.6), rgba(99, 102, 241, 0));
+  animation: float 8s ease-in-out infinite;
+  opacity: 0.4;
+}
+
+.hero-dot:nth-child(1) {
+  top: 20%;
+  left: 15%;
+}
+
+.hero-dot:nth-child(2) {
+  bottom: 25%;
+  right: 18%;
+  animation-delay: 1s;
+}
+
+.hero-dot:nth-child(3) {
+  top: 40%;
+  right: 40%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}

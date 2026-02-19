@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { 
   Github, 
@@ -21,15 +22,35 @@ import Link from "next/link";
 const projects = [
   {
     name: "PiggyBang",
-    description: "AI-powered money manager with WhatsApp integration. Track expenses, analyze spending patterns, and get financial insights through natural language.",
+    description:
+      "AI-powered money manager with WhatsApp integration. Track expenses, analyze spending patterns, and get financial insights through natural language.",
     tech: ["Laravel", "Vue.js", "MySQL", "n8n", "AI"],
     url: "https://piggybang.ragst.vip",
     icon: Database,
     featured: true,
   },
   {
+    name: "Health Tracker",
+    description:
+      "FiTracker bridges Samsung Health to Google Fit with a premium, animated dashboard plus deep insights.",
+    tech: ["Next.js", "Tailwind", "Google Fit API", "Nano Banana"],
+    url: "https://health.ragst.vip",
+    icon: Sparkles,
+    featured: true,
+  },
+  {
+    name: "Hermitdroid",
+    description:
+      "Android-first companion to OpenClaw, delivering automation + AI workflows that mirror the desktop experience.",
+    tech: ["Android", "Kotlin", "Jetpack Compose", "Automation"],
+    url: "https://github.com/ramagusti/hermitdroid",
+    icon: Cpu,
+    featured: true,
+  },
+  {
     name: "Reddit Alert",
-    description: "AI-powered Reddit monitoring tool. Get instant email notifications when keywords are mentioned. Perfect for market research and competitor analysis.",
+    description:
+      "AI-powered Reddit monitoring tool. Get instant email notifications when keywords are mentioned. Perfect for market research and competitor analysis.",
     tech: ["Next.js", "Tailwind", "Reddit API", "Vercel"],
     url: "https://reddit-alert.vercel.app",
     icon: Globe,
@@ -37,7 +58,8 @@ const projects = [
   },
   {
     name: "SnapLink",
-    description: "Modern URL shortener with analytics dashboard. Track clicks, devices, and geographic data with beautiful visualizations.",
+    description:
+      "Modern URL shortener with analytics dashboard. Track clicks, devices, and geographic data with beautiful visualizations.",
     tech: ["Next.js", "Tailwind", "Recharts", "Vercel"],
     url: "https://snaplink-url-shortener.vercel.app",
     icon: Zap,
@@ -45,7 +67,8 @@ const projects = [
   },
   {
     name: "SnapFetch",
-    description: "Chrome extension for downloading images and videos from Instagram, TikTok, Twitter/X, and Reddit. Privacy-focused, no data collection.",
+    description:
+      "Chrome extension for downloading images and videos from Instagram, TikTok, Twitter/X, and Reddit. Privacy-focused, no data collection.",
     tech: ["Chrome Extension", "JavaScript", "Manifest V3"],
     url: "https://github.com/ramagusti/social-media-downloader",
     icon: ExternalLink,
@@ -80,7 +103,19 @@ const staggerContainer = {
   },
 };
 
+const useParallax = () => {
+  const [offsetY, setOffsetY] = useState(0);
+  useEffect(() => {
+    const handler = () => setOffsetY(window.scrollY);
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+  return offsetY;
+};
+
 export default function Home() {
+  const offsetY = useParallax();
+
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden">
       {/* Background Pattern */}
@@ -111,14 +146,23 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+        <div className="hero-dot" />
+        <div className="hero-dot" />
+        <div className="hero-dot" />
+        <motion.div
+          className="absolute inset-0 hero-background"
+          style={{ transform: `translate3d(0, ${offsetY * 0.2}px, 0)` }}
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/70 via-[#0a0a0a]/70 to-[#080808]" />
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 animate-levitate">
               <Sparkles className="w-4 h-4 text-indigo-400" />
               <span className="text-sm text-gray-300">Available for opportunities</span>
             </div>
@@ -128,12 +172,11 @@ export default function Home() {
             </h1>
             
             <p className="text-xl sm:text-2xl text-gray-400 mb-4 max-w-2xl mx-auto">
-              Full-Stack Developer & SaaS Builder
+              Full-Stack Developer, AI explorer, and builder of automation-first products.
             </p>
             
             <p className="text-gray-500 mb-8 max-w-xl mx-auto">
-              Building innovative automation tools, AI-powered applications, and developer products. 
-              Passionate about creating solutions that solve real problems.
+              Creating experiences that blend automation, AI, and human craft—think premium dashboards, automation engines, and Android-first companions.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -150,9 +193,20 @@ export default function Home() {
                 Get In Touch
               </a>
             </div>
+
+            <div className="mt-8 flex flex-wrap justify-center gap-3 text-xs text-gray-300">
+              <span className="px-3 py-1 rounded-full border border-white/20">
+                Current focus: Health tracker, Android automation, AI research
+              </span>
+              <a
+                href="https://health.ragst.vip"
+                className="px-3 py-1 rounded-full border border-indigo-500 text-indigo-300 hover:bg-indigo-500/10 transition"
+              >
+                Import from Samsung Health / Google Fit
+              </a>
+            </div>
           </motion.div>
 
-          {/* Stats */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
