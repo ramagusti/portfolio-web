@@ -21,12 +21,12 @@ import Link from "next/link";
 
 const projects = [
   {
-    name: "PiggyBang",
+    name: "Hermitdroid",
     description:
-      "AI-powered money manager with WhatsApp integration. Track expenses, analyze spending patterns, and get financial insights through natural language.",
-    tech: ["Laravel", "Vue.js", "MySQL", "n8n", "AI"],
-    url: "https://piggybang.ragst.vip",
-    icon: Database,
+      "Android-first companion to OpenClaw, delivering automation + AI workflows that mirror the desktop experience.",
+    tech: ["Android", "Kotlin", "Jetpack Compose", "Automation"],
+    url: "https://github.com/ramagusti/hermitdroid",
+    icon: Cpu,
     featured: true,
   },
   {
@@ -39,12 +39,12 @@ const projects = [
     featured: true,
   },
   {
-    name: "Hermitdroid",
+    name: "PiggyBang",
     description:
-      "Android-first companion to OpenClaw, delivering automation + AI workflows that mirror the desktop experience.",
-    tech: ["Android", "Kotlin", "Jetpack Compose", "Automation"],
-    url: "https://github.com/ramagusti/hermitdroid",
-    icon: Cpu,
+      "AI-powered money manager with WhatsApp integration. Track expenses, analyze spending patterns, and get financial insights through natural language.",
+    tech: ["Laravel", "Vue.js", "MySQL", "n8n", "AI"],
+    url: "https://piggybang.ragst.vip",
+    icon: Database,
     featured: true,
   },
   {
@@ -368,7 +368,7 @@ export default function Home() {
               Let's build something amazing.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
               <a 
                 href="mailto:ragst8@gmail.com"
                 className="px-8 py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full font-medium transition-all glow flex items-center gap-2"
@@ -382,6 +382,22 @@ export default function Home() {
                 className="px-8 py-3 bg-white/5 hover:bg-white/10 text-white rounded-full font-medium transition-all border border-white/10 flex items-center gap-2"
               >
                 <Github className="w-4 h-4" /> GitHub
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/rama-gusti"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 bg-white/5 hover:bg-white/10 text-white rounded-full font-medium transition-all border border-white/10 flex items-center gap-2"
+              >
+                <Linkedin className="w-4 h-4" /> LinkedIn
+              </a>
+              <a 
+                href="https://www.upwork.com/freelancers/~013d5fbf6b05fa398b"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 bg-white/5 hover:bg-white/10 text-white rounded-full font-medium transition-all border border-white/10"
+              >
+                Upwork
               </a>
             </div>
           </motion.div>
