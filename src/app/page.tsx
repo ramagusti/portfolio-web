@@ -415,6 +415,12 @@ export default function Home() {
               <a href="https://github.com/ramagusti" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Github className="w-5 h-5" />
               </a>
+              <a href="https://www.linkedin.com/in/rama-gusti" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="https://www.upwork.com/freelancers/~013d5fbf6b05fa398b" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-xs">
+                Upwork
+              </a>
               <a href="mailto:ragst8@gmail.com" className="text-gray-400 hover:text-white transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
